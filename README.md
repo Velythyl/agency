@@ -1,5 +1,13 @@
 # agency
 
+# init.sh
+
+Above all else
+
+# apps
+
+Must be ran first
+
 # theming WIP
 
 kvantum.sh
