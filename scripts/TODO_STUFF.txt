@@ -1,0 +1,5 @@
+ Add all scipts to /usr/local/bin/
+ 
+ under the name of the script, without extenstion
+ 
+ (also chmod 777)
