@@ -3,6 +3,40 @@
 wal -n -i "$@"
 wallchange "$(cat "${HOME}/.cache/wal/wal")"
 
+sed -i '/^Opacity/d' ~/.cache/wal/colors-konsole.colorscheme
+echo "Opacity=0.4" >> ~/.cache/wal/colors-konsole.colorscheme
+echo "Blur=true" >> ~/.cache/wal/colors-konsole.colorscheme
+
+names=( "Background" "BackgroundIntense" "Foreground" "ForegroundIntense" )
+
+result="$(cat ~/.cache/wal/colors-konsole.colorscheme)"
+
+echo "$result"
+
+for i in "${names[@]}"
+do
+  result="$( echo "$result" | tr '\n' '\f' | sed "s/\[$i\]\fColor=[0-9,]\+\f/$i/" )"
+done
+
+echo "$result"
+
+result="$(
+  echo "$result" | 
+  sed "s/Background/[Background]\fColor=44,44,44\f/" |
+  sed "s/BackgroundIntense/[BackgroundFaint]\fColor=49,54,59\f\f[BackgroundIntense]\fColor=35,38,41\f/" | 
+  sed "s/Foreground/[Foreground]\fColor=239,240,241\f/" |
+  sed "s/ForegroundIntense/[ForegroundFaint]\fColor=220,230,231\f\f[ForegroundIntense]\fColor=252,252,252\f/"
+)"
+
+echo "$result" | tr '\f' '\n' > ~/.cache/wal/colors-konsole.colorscheme
+
+
+echo "$result"
+
+| tr '\n' '\f' | sed "s/\[$i\]\fColor=[0-9,]\+\f/allo/" | tr '\f' '\n' 
+
+\fColor=[\d|,]*\f
+
 . "${HOME}/.cache/wal/colors.sh"
 
 newcolors="[Base]
