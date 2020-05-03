@@ -3,11 +3,10 @@
 wal -n -i "$@"
 wallchange "$(cat "${HOME}/.cache/wal/wal")"
 
-sed -i '/^Opacity/d' ~/.cache/wal/colors-konsole.colorscheme
-echo "Opacity=0.4" >> ~/.cache/wal/colors-konsole.colorscheme
-echo "Blur=true" >> ~/.cache/wal/colors-konsole.colorscheme
+#sed -i '/^Opacity/d' ~/.cache/wal/colors-konsole.colorscheme
+#echo "Opacity=0.4" >> ~/.cache/wal/colors-konsole.colorscheme
+#echo "Blur=true" >> ~/.cache/wal/colors-konsole.colorscheme
 
-: '
 names=( "Background" "BackgroundIntense" "Foreground" "ForegroundIntense" )
 
 result="$(cat ~/.cache/wal/colors-konsole.colorscheme)"
@@ -30,14 +29,6 @@ result="$(
 )"
 
 echo "$result" | tr '\f' '\n' > ~/.cache/wal/colors-konsole.colorscheme
-
-
-echo "$result"
-
-| tr '\n' '\f' | sed "s/\[$i\]\fColor=[0-9,]\+\f/allo/" | tr '\f' '\n' 
-
-\fColor=[\d|,]*\f
-'
 
 . "${HOME}/.cache/wal/colors.sh"
 
