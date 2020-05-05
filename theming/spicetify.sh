@@ -12,7 +12,7 @@ tar xzf spicetify-${version/v/}-linux-amd64.tar.gz -C ~/spicetify
 chmod 777 /usr/share/spotify -R
 chmod 777 /usr/bin/spotify -R
 
-ln -s /home/charlie/spicetify/spicetify /usr/bin/spicetify
+ln -s /home/$USER/spicetify/spicetify /usr/bin/spicetify
 
 rm -r -f spicetify-${version/v/}-linux-amd64.tar.gz
 

@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-grep -qxF $@ /home/charlie/.bashrc || echo $@ >> /home/charlie/.bashrc
+grep -qxF $@ /home/$USER/.bashrc || echo $@ >> /home/$USER/.bashrc

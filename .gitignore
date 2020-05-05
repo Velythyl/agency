@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!*.sh
+!*.py
+!*.txt
+!*.md
+!.gitignore
+!*/
