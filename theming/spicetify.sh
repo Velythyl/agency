@@ -6,8 +6,8 @@ echo $version
 
 wget "https://github.com/khanhas/spicetify-cli/releases/download/${version}/spicetify-${version/v/}-linux-amd64.tar.gz"
 
-mkdir ~/spicetify
-tar xzf spicetify-${version/v/}-linux-amd64.tar.gz -C ~/spicetify
+mkdir /home/$USER/spicetify
+tar xzf spicetify-${version/v/}-linux-amd64.tar.gz -C /home/$USER/spicetify
 
 chmod 777 /usr/share/spotify -R
 chmod 777 /usr/bin/spotify -R
@@ -22,4 +22,4 @@ spicetify backup apply enable-devtool
 
 spicetify update
 
-cp ~/spicetify/Themes/SpicetifyDefault ~/spicetify/Themes/PywalBinding
+cp -r /home/$USER/spicetify/Themes/SpicetifyDefault /home/$USER/spicetify/Themes/PywalBinding

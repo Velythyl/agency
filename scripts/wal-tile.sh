@@ -52,6 +52,7 @@ preserve_1                            = FFFFFF"
 
 echo "${newcolors//#}" > ~/spicetify/Themes/PywalBinding/color.ini
 
+spicetify config current_theme PywalBinding
 spicetify update
 spicetify apply
 sleep 2
